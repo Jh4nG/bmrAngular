@@ -1,0 +1,27 @@
+
+<div class="row col-md-12">
+    <br>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h1>Crear Pedido</h1>
+        <form [formGroup]="formCompra" (ngSubmit)="onFormSubmit()">
+            <div class="form-group">
+                <label for="cliente">Cliente: </label>
+                <select class="form-control" [(ngModel)]="clientesSelect"  id="idCliente" formControlName="clienteCtrl" >
+                    <option *ngFor="let cliente of clientes" [value]="cliente.idCliente">{{ cliente.nombreCliente }}</option>
+                </select>
+                <br>
+                <label for="producto">Producto: </label>
+                <select class="form-control" [(ngModel)]="productoSelect" id="idProducto" formControlName="productoCtrl" >
+                    <option *ngFor="let prod of productos" [value]="prod.idProducto">{{ prod.nombreProducto }}</option>
+                </select>
+                <br>
+                <label for="Cantidad">Cantidad: </label>
+                <input class="form-control" [(ngModel)]="cantidadSelect" id="cantidad" type="number" formControlName="cantidadCtrl" >
+                <br>
+                <button type="submit" class="btn btn-success btn-sm">Enviar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>

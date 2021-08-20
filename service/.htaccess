@@ -1,0 +1,14 @@
+php_flag display_errors On
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^cliente/([0-9]+)$ controller/cliente.php?idCliente=$1 [L]
+RewriteRule ^cliente$ controller/cliente.php [L]
+
+RewriteRule ^producto/([0-9]+)$ controller/producto.php?idProducto=$1 [L]
+RewriteRule ^producto$ controller/producto.php [L]
+
+RewriteRule ^pedido/([0-9]+)$ controller/pedido.php?idProducto=$1 [L]
+RewriteRule ^pedido$ controller/pedido.php [L]
