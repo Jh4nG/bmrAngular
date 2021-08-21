@@ -1,0 +1,30 @@
+
+<div class="row col-md-12">
+    <br>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h1>Ingresar a Inventario</h1>
+        <form [formGroup]="formIngresoInv" (ngSubmit)="onFormSubmit()">
+            <div class="form-group">
+                <label for="cliente">Nombre Producto: </label>
+                <input class="form-control" [(ngModel)]="nombreSelect"  id="nomProducto" formControlName="nombreCtrl" >
+                <br>
+                <label for="producto">Lote: </label>
+                <input class="form-control" [(ngModel)]="loteSelect" id="loteProducto" formControlName="loteCtrl" >
+                <br>
+                <label for="Cantidad">Fecha Vencimiento: </label>
+                <input class="form-control" [(ngModel)]="fechaSelect" id="fechaProducto" type="date" formControlName="fechaCtrl" >
+                <br>
+                <label for="Cantidad">Cantidad: </label>
+                <input class="form-control" [(ngModel)]="cantidadSelect" id="cantidadProducto" type="number" formControlName="cantidadCtrl" >
+                <br>
+                <label for="Cantidad">Precio: </label>
+                <input class="form-control" [(ngModel)]="precioSelect" id="precioProducto" type="number" formControlName="preciodCtrl" >
+                <br>
+                <button type="submit" class="btn btn-success btn-sm">Ingresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+<hr>

@@ -6,11 +6,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormCompraComponent } from './pages/form-compra/form-compra.component';
+import { FormIngresoComponent } from './pages/form-ingreso/form-ingreso.component';
+import { ViewInventarioComponent } from './pages/view-inventario/view-inventario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormCompraComponent
+    FormCompraComponent,
+    FormIngresoComponent,
+    ViewInventarioComponent
   ],
   imports: [
     BrowserModule,

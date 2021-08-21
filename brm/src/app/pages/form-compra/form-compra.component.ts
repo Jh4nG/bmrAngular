@@ -15,6 +15,7 @@ export class FormCompraComponent implements OnInit {
   clientesSelect = "";
   productoSelect = "";
   cantidadSelect = "";
+  precio = 0;
   clientes : Cliente[] = [];
   productos : Producto[] = [];
   formCompra = new FormGroup({
@@ -73,6 +74,22 @@ export class FormCompraComponent implements OnInit {
     }
   }
 
+  setPrecio(){
+    try{
+      if(this.productoSelect != '' && this.cantidadSelect != ''){
+        let proTmp = this.productos.find(element => <any> element.idProducto == this.productoSelect);
+        if(proTmp != undefined){
+          this.precio = proTmp.precioProducto * parseInt(this.cantidadSelect);
+        }
+      }else{
+        this.precio = 0;
+      }
+    }catch(e){
+      console.log('Error de conversión');
+      this.precio = 0;
+    }
+  }
+
   verifyForm(){
     if(this.clientesSelect == ''){
       alert('El cliente es necesario');
@@ -82,8 +99,8 @@ export class FormCompraComponent implements OnInit {
       alert('El pruducto es necesario');
       return false;
     }
-    if(this.cantidadSelect == ''){
-      alert('La cantidad es necesario');
+    if(this.cantidadSelect == '' || this.cantidadSelect == '0'){
+      alert('La cantidad es necesaria mayor a 0');
       return false;
     }
     return true;

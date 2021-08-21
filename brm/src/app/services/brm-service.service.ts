@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { Pedido } from '../models/pedido';
+import { ProductoInv } from '../models/producto-inv';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,9 @@ export class BrmServiceService {
 
   postPedido(pedido: Pedido){
     return this.http.post<any>(this.url+'pedido', pedido);
+  }
+
+  setProducto(producto : ProductoInv){
+    return this.http.post<any>(this.url+'producto', producto);
   }
 }

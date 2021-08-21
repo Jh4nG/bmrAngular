@@ -12,16 +12,18 @@
                 </select>
                 <br>
                 <label for="producto">Producto: </label>
-                <select class="form-control" [(ngModel)]="productoSelect" id="idProducto" formControlName="productoCtrl" >
+                <select class="form-control" [(ngModel)]="productoSelect" (change)="setPrecio()" id="idProducto" formControlName="productoCtrl" >
                     <option *ngFor="let prod of productos" [value]="prod.idProducto">{{ prod.nombreProducto }}</option>
                 </select>
                 <br>
                 <label for="Cantidad">Cantidad: </label>
-                <input class="form-control" [(ngModel)]="cantidadSelect" id="cantidad" type="number" formControlName="cantidadCtrl" >
+                <input class="form-control" [(ngModel)]="cantidadSelect" (keyup)="setPrecio()" id="cantidad" type="number" formControlName="cantidadCtrl" >
                 <br>
+                <h3>Precio total: $ {{ precio }}</h3>
                 <button type="submit" class="btn btn-success btn-sm">Enviar</button>
             </div>
         </form>
     </div>
     <div class="col-md-4"></div>
 </div>
+<hr>
